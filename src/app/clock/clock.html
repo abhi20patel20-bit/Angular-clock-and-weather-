@@ -1,0 +1,18 @@
+<div class="clock">
+  <div
+    class="number"
+    *ngFor="let number of numbers"
+    [style.transform]="'rotate(' + number * 30 + 'deg)'"
+  >
+    <!-- Rotate the wrapper around the face, then undo that rotation so each number stays upright. -->
+    <span [style.transform]="'rotate(-' + number * 30 + 'deg)'">
+      {{ number }}
+    </span>
+  </div>
+
+  <div class="hand hour" [style.transform]="getHourRotation()"></div>
+  <div class="hand minute" [style.transform]="getMinuteRotation()"></div>
+  <div class="hand second" [style.transform]="getSecondRotation()"></div>
+
+  <div class="center-dot"></div>
+</div>

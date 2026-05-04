@@ -1,0 +1,69 @@
+.clock {
+  width: 280px;
+  height: 280px;
+  border: 8px solid #222;
+  border-radius: 50%;
+  position: relative;
+  background: #f8f8f8;
+  margin: 40px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.number {
+  /* Each number fills the clock face so rotation places it around the dial from the center point. */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #222;
+}
+
+.number span {
+  display: inline-block;
+  padding-top: 12px;
+}
+
+.hand {
+  /* Hands rotate around their bottom edge so they pivot from the center dot. */
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 10px;
+  transition: transform 0.2s linear;
+
+}
+
+.hour {
+  width: 7px;
+  height: 70px;
+  background: #222;
+  margin-left: -3.5px;
+}
+
+.minute {
+  width: 5px;
+  height: 95px;
+  background: #333;
+  margin-left: -2.5px;
+}
+
+.second {
+  width: 2px;
+  height: 105px;
+  background: red;
+  margin-left: -1px;
+}
+
+.center-dot {
+  width: 16px;
+  height: 16px;
+  background: #222;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

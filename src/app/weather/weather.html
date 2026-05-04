@@ -1,0 +1,14 @@
+<div class="weather-card" *ngIf="weather(); else loading">
+  <img [src]="getIconUrl()" alt="Weather icon">
+
+  <h2>{{ weather().main.temp }}°C</h2>
+
+  <p>{{ weather().weather[0].description }}</p>
+
+  <p>Humidity: {{ weather().main.humidity }}%</p>
+</div>
+
+<!-- Reuse the same placeholder area for the initial load and the failed-request message. -->
+<ng-template #loading>
+  <p>{{ error() || 'Loading weather...' }}</p>
+</ng-template>
