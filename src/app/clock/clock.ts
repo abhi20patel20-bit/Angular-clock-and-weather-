@@ -11,9 +11,9 @@ import { CommonModule } from '@angular/common';
 export class Clock implements OnInit, OnDestroy {
   time = signal(new Date());
   numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
+  private now = this.time();
   private timerId: any;
-  private secondRotation = 0;
+  private secondRotation = this.now.getSeconds() * 6;
 
   ngOnInit() {
     // The clock owns its own interval so the UI keeps moving without outside input.
